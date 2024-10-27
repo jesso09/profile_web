@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 
 const ProfileWebsite = () => {
@@ -7,8 +8,14 @@ const ProfileWebsite = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col items-center text-center">
-          <div className="w-40 h-40 rounded-full overflow-hidden mb-8">
-            
+          <div className="w-40 h-40 rounded-full overflow-hidden mb-8 relative">
+            <Image 
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThQU0L4wGZj3h1LdIJqJMxUGxvZpY2UID5yg&s"
+              alt="Profile Picture"
+              width={160}
+              height={160}
+              className="object-cover"
+            />
           </div>
           <h1 className="text-4xl font-bold mb-4">Gede Bagus Jyestha Permana</h1>
           <h2 className="text-xl text-gray-400 mb-6">Junior Developer</h2>
@@ -119,8 +126,8 @@ const ProfileWebsite = () => {
         <div className="max-w-xl mx-auto text-center">
           <h3 className="text-2xl font-bold mb-8">Get In Touch</h3>
           <p className="text-gray-300 mb-8">
-            I'm currently open for freelance projects and full-time positions. 
-            Feel free to reach out if you'd like to work together!
+            I&apos;m currently open for freelance projects and full-time positions. 
+            Feel free to reach out if you&apos;d like to work together!
           </p>
           <a 
             href="mailto:jyestha47@gmail.com"
