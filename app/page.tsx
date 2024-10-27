@@ -14,6 +14,7 @@ const ProfileWebsite = () => {
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThQU0L4wGZj3h1LdIJqJMxUGxvZpY2UID5yg&s" 
               alt="Profile Picture"
               className="w-full h-full object-cover"
+              width={500} height={500}
             />
           </div>
           <h1 className="text-4xl font-bold mb-4">Gede Bagus Jyestha Permana</h1>
