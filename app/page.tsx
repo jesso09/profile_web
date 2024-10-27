@@ -10,7 +10,7 @@ const ProfileWebsite = () => {
         <div className="flex flex-col items-center text-center">
           <div className="w-40 h-40 rounded-full overflow-hidden mb-8 relative">
             <Image 
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThQU0L4wGZj3h1LdIJqJMxUGxvZpY2UID5yg&s"
+              src={'/images/images.png'}
               alt="Profile Picture"
               width={160}
               height={160}
