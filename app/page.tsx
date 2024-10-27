@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 
 const ProfileWebsite = () => {
   return (
