@@ -19,42 +19,40 @@ export const metadata: Metadata = {
 };
 
 
-type Project = {
-  id: number;
-  name: string;
-  desc: string;
-  status: string;
-  created_at: Date | null;
-  updated_at: Date | null;
-  techs_project: TechsProject[];
-  project_images: ProjectImage[];
-};
+// type Project = {
+//   id: number;
+//   name: string;
+//   desc: string;
+//   status: string;
+//   created_at: Date | null;
+//   updated_at: Date | null;
+//   techs_project: TechsProject[];
+//   project_images: ProjectImage[];
+// };
 
-type ProjectImage = {
-  id: number;
-  project_id?: number;
-  name: string;
-  status: string;
-  created_at: Date | null;
-  updated_at: Date | null;
-};
+// type ProjectImage = {
+//   id: number;
+//   project_id?: number;
+//   name: string;
+//   status: string;
+//   created_at: Date | null;
+//   updated_at: Date | null;
+// };
 
-type TechsProject = {
-  id: number;
-  project_id: number;
-  techs_id: number;
-  created_at: Date | null;
-  updated_at: Date | null;
-  techs: ProjectImage;
-};
+// type TechsProject = {
+//   id: number;
+//   project_id: number;
+//   techs_id: number;
+//   created_at: Date | null;
+//   updated_at: Date | null;
+//   techs: ProjectImage;
+// };
 
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const data = await fetch("http://192.168.40.193:8000/api/public/index");
-  const project : Project = await data.json();
 
   return (
     <html lang="en">

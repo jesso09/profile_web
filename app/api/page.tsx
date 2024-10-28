@@ -8,8 +8,8 @@ type Response = {
 };
 
 export default async function Page() {
-  let data = await fetch("https://api.vercel.app/blog");
-  let posts = await data.json();
+  const data = await fetch("https://api.vercel.app/blog");
+  const posts = await data.json();
   return (
     <div className="container mx-auto px-4 py-16">
       <h3 className="text-2xl font-bold text-center mb-8">Featured Projects</h3>

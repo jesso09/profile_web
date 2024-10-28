@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 import images from "@/public/images";
+
 type Project = {
   id: number;
   name: string;
@@ -38,8 +39,8 @@ type ApiResponse = {
 };
 
 export default async function ProfileWebsite() {
-  let response = await fetch("http://192.168.40.193:8000/api/public/index");
-  let result: ApiResponse = await response.json();
+  const response = await fetch("http://192.168.40.193:8000/api/public/index");
+  const result: ApiResponse = await response.json();
   
   // Mengambil array projects dari response
   const projects = result.data || [];
