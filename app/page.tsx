@@ -2,51 +2,27 @@ import React from "react";
 import Image from "next/image";
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 import images from "@/public/images";
-
-type Project = {
-  id: number;
-  name: string;
-  desc: string;
-  status: string;
-  created_at: Date | null;
-  updated_at: Date | null;
-  techs_project: TechsProject[];
-  project_images: ProjectImage[];
-};
-
-type ProjectImage = {
-  id: number;
-  project_id?: number;
-  name: string;
-  status: string;
-  created_at: Date | null;
-  updated_at: Date | null;
-};
-
-type TechsProject = {
-  id: number;
-  project_id: number;
-  techs_id: number;
-  created_at: Date | null;
-  updated_at: Date | null;
-  techs: ProjectImage;
-};
-
-type ApiResponse = {
-  data: Project[];
-  message: string;
-  status: number;
-};
+import { baseUrl } from "@/utils/env";
+import { Project, ApiResponse, Tech } from "@/app/project/projectList";
+import MyFooter from "@/app/component/footer";
 
 export default async function ProfileWebsite() {
-  const response = await fetch("http://192.168.40.193:8000/api/public/index");
+  const response = await fetch(`${baseUrl}public/index`, {
+    cache: "no-store",
+  });
   const result: ApiResponse = await response.json();
-  
+
+  const techFromApi = await fetch(`${baseUrl}public/tech`, {
+    cache: "no-store",
+  });
+  const resultTech: ApiResponse = await techFromApi.json();
+
   // Mengambil array projects dari response
   const projects = result.data || [];
+  const techs = resultTech.data || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-yellow-500 to-black-800 text-white">
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16">
         <div className="flex flex-col items-center text-center">
@@ -60,11 +36,17 @@ export default async function ProfileWebsite() {
             />
           </div>
           <h1 className="text-4xl font-bold mb-4">
-          Lorem ipsum dolor sit amet,
+            Gede Bagus Jyestha Permana
           </h1>
-          <h2 className="text-xl text-gray-400 mb-6">Lorem ipsum dolor sit amet,</h2>
+          <h2 className="text-xl text-gray-400 mb-6">Full-stack Developer</h2>
           <p className="max-w-2xl text-gray-300 mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </p>
           <div className="flex space-x-4">
             <a
@@ -98,15 +80,29 @@ export default async function ProfileWebsite() {
       {/* Skills Section */}
       <div className="container mx-auto px-4 py-16">
         <h3 className="text-2xl font-bold text-center mb-8">Skills</h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-3xl mx-auto">
-          {["Flutter", "Next.js", "Laravel", "Figma", "MySQL"].map((skill) => (
-            <div
-              key={skill}
-              className="bg-gray-700 rounded-lg p-4 text-center hover:bg-gray-600 transition-colors"
-            >
-              {skill}
-            </div>
-          ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {techs.map(
+            (skill: Tech) =>
+              skill.status !== "Deleted" && (
+                <div
+                  key={skill.id}
+                  className="bg-gray-700 rounded-lg p-4 text-center hover:bg-gray-600 transition-colors"
+                >
+                  {skill.name}
+                  <p
+                    className={`mb-4 ${
+                      skill.status === "Advance"
+                        ? "text-green-300"
+                        : skill.status === "Intermediate"
+                        ? "text-yellow-300"
+                        : "text-red-300"
+                    }`}
+                  >
+                    {skill.status}
+                  </p>
+                </div>
+              )
+          )}
         </div>
       </div>
 
@@ -143,7 +139,13 @@ export default async function ProfileWebsite() {
         <div className="max-w-xl mx-auto text-center">
           <h3 className="text-2xl font-bold mb-8">Get In Touch</h3>
           <p className="text-gray-300 mb-8">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
           </p>
           <a
             href="mailto:jyestha47@gmail.com"
@@ -153,6 +155,7 @@ export default async function ProfileWebsite() {
           </a>
         </div>
       </div>
+      <MyFooter></MyFooter>
     </div>
   );
 }
