@@ -59,13 +59,11 @@ export default async function ProfileWebsite() {
             />
           </div>
           <h1 className="text-4xl font-bold mb-4">
-            Gede Bagus Jyestha Permana
+          Lorem ipsum dolor sit amet,
           </h1>
-          <h2 className="text-xl text-gray-400 mb-6">Junior Developer</h2>
+          <h2 className="text-xl text-gray-400 mb-6">Lorem ipsum dolor sit amet,</h2>
           <p className="max-w-2xl text-gray-300 mb-8">
-            Passionate developer with expertise in React, Next.js, and Node.js.
-            I love creating elegant solutions to complex problems and building
-            user-friendly applications that make a difference.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
           <div className="flex space-x-4">
             <a
@@ -144,9 +142,7 @@ export default async function ProfileWebsite() {
         <div className="max-w-xl mx-auto text-center">
           <h3 className="text-2xl font-bold mb-8">Get In Touch</h3>
           <p className="text-gray-300 mb-8">
-            {/* I&apos;m currently open for freelance projects and full-time
-            positions. Feel free to reach out if you&apos;d like to work
-            together! */}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
           <a
             href="mailto:jyestha47@gmail.com"
