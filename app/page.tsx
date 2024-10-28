@@ -144,9 +144,9 @@ export default async function ProfileWebsite() {
         <div className="max-w-xl mx-auto text-center">
           <h3 className="text-2xl font-bold mb-8">Get In Touch</h3>
           <p className="text-gray-300 mb-8">
-            I&apos;m currently open for freelance projects and full-time
+            {/* I&apos;m currently open for freelance projects and full-time
             positions. Feel free to reach out if you&apos;d like to work
-            together!
+            together! */}
           </p>
           <a
             href="mailto:jyestha47@gmail.com"
