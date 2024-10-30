@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { baseUrl } from "@/utils/env";
 
 export type Project = {

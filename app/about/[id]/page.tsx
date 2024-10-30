@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 import images from "@/public/images";
-import { Project, ApiResponse, Tech } from "@/app/project/projectList";
+import { Project, Tech } from "@/app/project/projectList";
 import MyFooter from "@/app/component/footer";
 import MyHeader from "@/app/component/header";
 import { getProjectsAndTech } from "@/app/project/projectList";
