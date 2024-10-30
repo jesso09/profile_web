@@ -8,17 +8,17 @@ import { getProjectsAndTech } from "@/app/project/projectList";
 import Image from "next/image";
 import images from "@/public/images";
 
-interface TestPageProps {
+interface ProfileWebsiteProps {
   section1Width?: string;
   section2Width?: string;
   section3Width?: string;
 }
 
-export default function TestPage({
+export default function ProfileWebsite({
   section1Width = "w-1/5", // Default width
   section2Width = "w-2/5",
   section3Width = "w-2/5",
-}: TestPageProps) {
+}: ProfileWebsiteProps) {
   const [projects, setProjects] = useState<Project[]>([]);
   const [techs, setTechs] = useState<Tech[]>([]);
   const [selectedSection, setSelectedSection] = useState("project");
