@@ -44,28 +44,19 @@ export type ApiResponse = {
   status: number;
 };
 
-const GetProjectList = () => {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
+export async function getProjectsAndTech() {
+  const response = await fetch(`${baseUrl}public/index`, {
+    cache: "no-store",
+  });
+  const result: ApiResponse = await response.json();
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const response = await fetch(`${baseUrl}public/index`);
-        const result: ApiResponse = await response.json();
-        setProjects(result.data || []);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProjects();
-  }, []);
+  const techFromApi = await fetch(`${baseUrl}public/tech`, {
+    cache: "no-store",
+  });
+  const resultTech: ApiResponse = await techFromApi.json();
 
-  if (loading) return <p>Loading projects...</p>;
-
-  return projects;
-};
-
-export default GetProjectList;
+  return {
+    projects: result.data || [],
+    techs: resultTech.data || []
+  };
+}

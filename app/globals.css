@@ -25,3 +25,23 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Custom scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  background-color: #3f3f46; /* zinc-800 */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #595965; /* Warna hijau */
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #647286;
+}
+
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none; /* Hilangkan ikon panah */
+}
+
