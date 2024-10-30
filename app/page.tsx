@@ -8,17 +8,19 @@ import { getProjectsAndTech } from "@/app/project/projectList";
 import Image from "next/image";
 import images from "@/public/images";
 
-interface ProfileWebsiteProps {
-  section1Width?: string;
-  section2Width?: string;
-  section3Width?: string;
-}
+// interface ProfileWebsiteProps {
+//   section1Width?: string;
+//   section2Width?: string;
+//   section3Width?: string;
+// }
 
-export default function ProfileWebsite({
-  section1Width = "w-1/5", // Default width
-  section2Width = "w-2/5",
-  section3Width = "w-2/5",
-}: ProfileWebsiteProps) {
+export default function ProfileWebsite(
+//   {
+//   section1Width = "w-1/5", // Default width
+//   section2Width = "w-2/5",
+//   section3Width = "w-2/5",
+// }: ProfileWebsiteProps
+) {
   const [projects, setProjects] = useState<Project[]>([]);
   const [techs, setTechs] = useState<Tech[]>([]);
   const [selectedSection, setSelectedSection] = useState("project");
@@ -40,7 +42,8 @@ export default function ProfileWebsite({
       <div className="container mx-auto px-4 py-4 animate-fade-in flex-grow flex gap-2">
         
         {/* Section 1 */}
-        <div className={`${section1Width} bg-zinc-800 rounded-lg p-6 max-h-[73vh]`}>
+        {/* <div className={`${section1Width} bg-zinc-800 rounded-lg p-6 max-h-[73vh]`}> */}
+        <div className={`w-1/5 bg-zinc-800 rounded-lg p-6 max-h-[73vh]`}>
           <h1 className="text-2xl font-bold mb-1">Hi,</h1>
           <p className="text-white mb-4">Welcome to my personal website</p>
           <div className="grid grid-cols-1 gap-4">
@@ -63,7 +66,8 @@ export default function ProfileWebsite({
         </div>
 
         {/* Section 2 */}
-        <div className={`${section2Width} bg-zinc-800 rounded-lg p-6 max-h-[73vh] overflow-y-auto custom-scrollbar`}>
+        {/* <div className={`${section2Width} bg-zinc-800 rounded-lg p-6 max-h-[73vh] overflow-y-auto custom-scrollbar`}> */}
+        <div className={`"w-2/5" bg-zinc-800 rounded-lg p-6 max-h-[73vh] overflow-y-auto custom-scrollbar`}>
           <h1 className="text-2xl font-bold mb-4">
             {selectedSection === "skill" ? "Skills" : "Projects"}
           </h1>
@@ -115,7 +119,8 @@ export default function ProfileWebsite({
         </div>
 
         {/* Section 3 */}
-        <div className={`${section3Width} bg-zinc-800 rounded-lg p-6 max-h-[73vh] overflow-y-auto custom-scrollbar`}>
+        {/* <div className={`${section3Width} bg-zinc-800 rounded-lg p-6 max-h-[73vh] overflow-y-auto custom-scrollbar`}> */}
+        <div className={`"w-2/5" bg-zinc-800 rounded-lg p-6 max-h-[73vh] overflow-y-auto custom-scrollbar`}>
           <h1 className="text-2xl font-bold mb-2">Detail Project</h1>
           {selectedProject ? (
             <>
